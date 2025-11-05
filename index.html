@@ -9,7 +9,7 @@
 </head>  
 <body>  
 
-<!-- Капча от Santzy - ПОЛНОЭКРАННАЯ ПЕРЕКРЫВАЮЩАЯ -->
+
 <div id="captcha-overlay" style="
     position: fixed !important;
     top: 0 !important;
@@ -169,7 +169,7 @@
     </div>  
 </section>  
   
-<!-- магазин -->  
+
 <section class="shop" id="shop">  
     <h1 class="heading">наш <span>магазин</span></h1>  
       
@@ -206,7 +206,7 @@
     </div>  
 </section>  
   
-<!-- услуги -->  
+  
 <section class="services" id="services">  
     <h1 class="heading">наши <span>услуги</span></h1>  
       
@@ -239,7 +239,7 @@
     </div>  
 </section> 
   
-<!-- аренда животных -->  
+
 <section class="plan" id="plan">  
     <h1 class="heading">аренда <span>животных</span></h1>  
      
@@ -271,7 +271,7 @@
             </div>  
             <div class="amount"><span>$</span>25 <small>/день</small></div>  
            <a href="javascript:void(0)" class="btn rent-btn">Арендовать котенка</a>
-<!-- и т.д. -->
+
         </div>  
         
         <div class="box">  
@@ -354,7 +354,7 @@
   
 </section>  
   
-<!-- подвал -->
+
 <section class="footer">
     <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800" alt="волна">
     
@@ -373,7 +373,7 @@
     <div class="credit">создано <span>Team Number One</span> | Все права защищены</div>
 </section>
 
-<!-- Форма оплаты -->
+
 <div class="payment-modal" id="payment-modal">
     <div class="payment-content">
         <div class="payment-header">
@@ -414,7 +414,7 @@
 </div>
 
 <script>
-// === КАПЧА ОТ SANTZY - ПРОСТАЯ РАБОЧАЯ ===
+
 document.addEventListener('DOMContentLoaded', function() {
     // Блокируем скролл сайта
     document.body.style.overflow = 'hidden';
@@ -424,31 +424,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const num2 = Math.floor(Math.random() * 10) + 1;
     const correctAnswer = num1 + num2;
     
-    // Показываем пример
+    
     document.getElementById('num1').textContent = num1;
     document.getElementById('num2').textContent = num2;
     
-    // Фокус на поле ввода
+   
     document.getElementById('captcha-input').focus();
     
-    // Обработчик кнопки подтверждения
+    
     document.getElementById('verify-btn').addEventListener('click', function() {
         const userInput = document.getElementById('captcha-input');
         const userAnswer = parseInt(userInput.value);
         
         if (userAnswer === correctAnswer) {
-            // ПРАВИЛЬНО - убираем капчу
+           
             document.getElementById('captcha-overlay').style.display = 'none';
             document.body.style.overflow = 'auto';
         } else {
-            // НЕПРАВИЛЬНО
+           
             alert('❌ Неправильно! Попробуй еще раз!');
             userInput.value = '';
             userInput.focus();
         }
     });
     
-    // Обработчик нажатия Enter
+   
     document.getElementById('captcha-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             document.getElementById('verify-btn').click();
@@ -466,7 +466,7 @@ document.getElementById('closeAiAssistant').addEventListener('click', function()
     document.getElementById('aiAssistant').classList.remove('active');
 });
 
-// Быстрые вопросы ИИ
+
 document.querySelectorAll('.quick-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const question = this.getAttribute('data-question');
@@ -475,7 +475,7 @@ document.querySelectorAll('.quick-btn').forEach(btn => {
     });
 });
 
-// Отправка вопроса ИИ
+
 document.getElementById('sendAiQuestion').addEventListener('click', function() {
     const input = document.getElementById('aiQuestion');
     const question = input.value.trim();
@@ -487,7 +487,7 @@ document.getElementById('sendAiQuestion').addEventListener('click', function() {
     }
 });
 
-// Enter для отправки
+
 document.getElementById('aiQuestion').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
         document.getElementById('sendAiQuestion').click();
@@ -527,7 +527,7 @@ function generateAiResponse(question) {
     chat.scrollTop = chat.scrollHeight;
 }
 
-// Контакты
+
 document.querySelector('.phone-click').addEventListener('click', function() {
     const phone = '+77770209088';
     if(navigator.clipboard) {
@@ -556,7 +556,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Корзина
+
 document.querySelectorAll('.add-to-cart').forEach(btn => {
     btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -565,7 +565,7 @@ document.querySelectorAll('.add-to-cart').forEach(btn => {
     });
 });
 
-// Аренда
+
 document.querySelectorAll('.rent-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
         e.preventDefault();
@@ -574,7 +574,7 @@ document.querySelectorAll('.rent-btn').forEach(btn => {
     });
 });
 
-// Оплата
+
 document.querySelector('.payment-service-btn').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('payment-amount').value = '$0';
@@ -598,3 +598,4 @@ document.getElementById('payment-form').addEventListener('submit', function(e) {
 
 </body>  
 </html>
+
