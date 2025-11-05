@@ -30,7 +30,7 @@ window.onload = () =>{
         document.querySelector('.header').classList.remove('active'); 
     } 
 }
-// === ОНЛАЙН ОПЛАТА ===
+
 function openPayment(amount) {
     document.getElementById('payment-amount').value = $${amount};
     document.getElementById('payment-modal').classList.add('active');
@@ -41,7 +41,7 @@ document.querySelector('.close-payment').addEventListener('click', () => {
     document.getElementById('payment-modal').classList.remove('active');
 });
 
-// Отправка формы оплаты
+
 document.getElementById('payment-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -56,7 +56,7 @@ document.getElementById('payment-form').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Открываем оплату при клике на кнопки
+
 document.querySelectorAll('.add-to-cart, .rent-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const price = this.closest('.box').querySelector('.price, .amount').textContent;
@@ -64,7 +64,7 @@ document.querySelectorAll('.add-to-cart, .rent-btn').forEach(btn => {
         setTimeout(() => openPayment(amount), 500);
     });
 });
-// === ОПЛАТА ЧЕРЕЗ УСЛУГИ ===
+
 document.querySelector('.payment-service-btn').addEventListener('click', function() {
     openPaymentModal();
 });
@@ -79,7 +79,7 @@ function openPayment(amount) {
     document.getElementById('payment-modal').classList.add('active');
 }
 
-// Закрытие оплаты
+
 document.querySelector('.close-payment').addEventListener('click', () => {
     document.getElementById('payment-modal').classList.remove('active');
 });
@@ -109,7 +109,7 @@ function openPayment(amount) {
     }
 }
 
-// Закрытие оплаты
+
 const closePayment = document.querySelector('.close-payment');
 if (closePayment) {
     closePayment.addEventListener('click', () => {
@@ -117,7 +117,7 @@ if (closePayment) {
     });
 }
 
-// Отправка формы оплаты
+
 const paymentForm = document.getElementById('payment-form');
 if (paymentForm) {
     paymentForm.addEventListener('submit', function(e) {
@@ -133,7 +133,7 @@ if (paymentForm) {
         this.reset();
     });
 }
-// Открываем оплату при клике на кнопки товаров
+
 document.querySelectorAll('.add-to-cart, .rent-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const box = this.closest('.box');
@@ -147,7 +147,7 @@ document.querySelectorAll('.add-to-cart, .rent-btn').forEach(btn => {
         }
     });
 });
-// === КАПЧА ОТ SANTZY - БЛОКИРУЮЩАЯ ===
+
 document.addEventListener('DOMContentLoaded', function() {
     // Генерируем случайный пример
     const num1 = Math.floor(Math.random() * 10) + 1;
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Enter для отправки
+   
     document.getElementById('captcha-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             document.getElementById('verify-btn').click();
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Анимация встряски для ошибки
+
 const style = document.createElement('style');
 style.textContent = `
     @keyframes shake {
@@ -197,13 +197,13 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-// === КАПЧА ОТ SANTZY - БЛОКИРУЮЩАЯ ===
+
 document.addEventListener('DOMContentLoaded', function() {
     // Блокируем скролл всего сайта
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
     
-    // Генерируем пример
+   
     const num1 = Math.floor(Math.random() * 10) + 1;
     const num2 = Math.floor(Math.random() * 10) + 1;
     const correctAnswer = num1 + num2;
@@ -211,10 +211,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('num1').textContent = num1;
     document.getElementById('num2').textContent = num2;
     
-    // Фокус на инпут
+    
     document.getElementById('captcha-input').focus();
     
-    // Проверка ответа
+   
     document.getElementById('verify-btn').addEventListener('click', function() {
         const userAnswer = parseInt(document.getElementById('captcha-input').value);
         
@@ -231,10 +231,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Enter для отправки
+   
     document.getElementById('captcha-input').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             document.getElementById('verify-btn').click();
         }
     });
+
 });
